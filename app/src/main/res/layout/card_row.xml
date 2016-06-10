@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tematica"
+            android:textSize="50sp"
+            android:text="Tematica"
+            android:background="@color/colorPrimary"
+            android:focusable="true"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/titulo"
+            android:textSize="40sp"
+            android:text="Título"
+            android:background="@color/colorPrimary1"
+            android:focusable="true"
+
+            />
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cabecera"
+                android:textSize="30sp"
+                android:text="Cabecera"
+            android:background="@color/colorPrimary2"
+            android:focusable="true"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cuerpo"
+            android:textSize="20sp"
+            android:text="Cuerpo"
+            android:background="@color/colorPrimary3"
+            android:focusable="true"
+            />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
