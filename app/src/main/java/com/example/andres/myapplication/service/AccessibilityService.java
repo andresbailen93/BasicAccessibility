@@ -62,6 +62,8 @@ public class AccessibilityService extends android.accessibilityservice.Accessibi
         info.flags = AccessibilityServiceInfo.DEFAULT;
         info.eventTypes = AccessibilityEvent.TYPES_ALL_MASK;
         info.feedbackType = AccessibilityServiceInfo.FEEDBACK_GENERIC;
+        info.notificationTimeout = 100;
+        info.packageNames = new String[]{"com.example.andres.myapplication"};
         setServiceInfo(info);
 
     }

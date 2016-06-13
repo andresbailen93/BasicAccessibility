@@ -11,19 +11,18 @@
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <service
             android:name=".service.AccessibilityService"
-            android:enabled="true"
-            android:exported="true"
+            android:label="@string/accessibility_service_label"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
-                <action android:name=".service.AccessibilityService" />
+                <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
         </service>
+        <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
     </application>
 </manifest>

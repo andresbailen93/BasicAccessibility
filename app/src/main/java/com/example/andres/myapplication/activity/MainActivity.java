@@ -1,6 +1,7 @@
 package com.example.andres.myapplication.activity;
 
 import android.app.IntentService;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().add(R.id.frame_main, loadFragment).commit();
         Toast.makeText(getApplicationContext(), "¡Cargando!", Toast.LENGTH_LONG).show();
 
+
         ArrayList<Noticia> noticiaArrayList = new ArrayList<>();
         noticiaArrayList.add(noticia1);
         noticiaArrayList.add(noticia2);
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         listFragment.setArguments(bundle);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, listFragment).commit();
+
+
 
     }
 
