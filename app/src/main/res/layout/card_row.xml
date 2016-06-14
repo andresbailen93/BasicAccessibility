@@ -16,6 +16,8 @@
             android:text="Tematica"
             android:background="@color/colorPrimary"
             android:focusable="true"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
             />
         <TextView
             android:layout_width="match_parent"
@@ -25,7 +27,8 @@
             android:text="Título"
             android:background="@color/colorPrimary1"
             android:focusable="true"
-
+            android:clickable="true"
+            android:focusableInTouchMode="true"
             />
         <TextView
                 android:layout_width="match_parent"
@@ -35,6 +38,8 @@
                 android:text="Cabecera"
             android:background="@color/colorPrimary2"
             android:focusable="true"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
             />
         <TextView
             android:layout_width="match_parent"
@@ -44,6 +49,8 @@
             android:text="Cuerpo"
             android:background="@color/colorPrimary3"
             android:focusable="true"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
             />
     </LinearLayout>
 </android.support.v7.widget.CardView>

@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         LoadFragment loadFragment = new LoadFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.frame_main, loadFragment).commit();
-        Toast.makeText(getApplicationContext(), "¡Cargando!", Toast.LENGTH_LONG).show();
 
 
         ArrayList<Noticia> noticiaArrayList = new ArrayList<>();

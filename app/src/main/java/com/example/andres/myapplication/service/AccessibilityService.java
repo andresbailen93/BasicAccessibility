@@ -4,31 +4,27 @@ import android.accessibilityservice.AccessibilityServiceInfo;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+
+import java.util.Locale;
 
 public class AccessibilityService extends android.accessibilityservice.AccessibilityService {
+
     public AccessibilityService() {
     }
 
-    static final String TAG = "RecorderService";
+    static final String TAG = "AccesibilitySERVICE";
+
 
     private String getEventType(AccessibilityEvent event) {
         switch (event.getEventType()) {
-            case AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED:
-                return "TYPE_NOTIFICATION_STATE_CHANGED";
             case AccessibilityEvent.TYPE_VIEW_CLICKED:
+                Log.e("CLICK", String.valueOf(event.getText()));
+               // Log.e("HIJONODO",String.valueOf(accessibilityNodeInfo.getChild(0).getText()));
                 return "TYPE_VIEW_CLICKED";
-            case AccessibilityEvent.TYPE_VIEW_FOCUSED:
-                return "TYPE_VIEW_FOCUSED";
-            case AccessibilityEvent.TYPE_VIEW_LONG_CLICKED:
-                return "TYPE_VIEW_LONG_CLICKED";
-            case AccessibilityEvent.TYPE_VIEW_SELECTED:
-                return "TYPE_VIEW_SELECTED";
-            case AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED:
-                return "TYPE_WINDOW_STATE_CHANGED";
-            case AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED:
-                return "TYPE_VIEW_TEXT_CHANGED";
         }
         return "default";
     }
@@ -43,10 +39,17 @@ public class AccessibilityService extends android.accessibilityservice.Accessibi
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
+
+
         Log.v(TAG, String.format(
-                "onAccessibilityEvent: [type] %s [class] %s [package] %s [time] %s [text] %s",
-                getEventType(event), event.getClassName(), event.getPackageName(),
-                event.getEventTime(), getEventText(event)));
+                "onAccessibilityEvent: [type] %s [text] %s",
+                getEventType(event), getEventText(event)));
+
+        AccessibilityNodeInfo source = null;
+        if (AccessibilityEvent.TYPE_VIEW_CLICKED == event.getEventType()) {
+            source = event.getSource();
+            Log.e("CLICK", String.valueOf(source.getText()));
+        }
     }
 
     @Override

@@ -55,6 +55,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.titulo.setText(noticiaArrayList.get(position).getTitulo());
         holder.cabecera.setText(noticiaArrayList.get(position).getCabecera());
         holder.cuerpo.setText(noticiaArrayList.get(position).getCuerpo());
+        if(position == 0){
+            holder.tematica.requestFocus();
+        }
     }
 
     @Override
